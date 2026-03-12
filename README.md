@@ -42,6 +42,7 @@ npm install -g mcporter
 
 Copy the `CLAUDE.md` and `skills/` folder to your Claude configuration directory:
 
+**macOS / Linux / Git Bash:**
 ```bash
 # Create the skills directory
 mkdir -p ~/.claude/skills
@@ -49,6 +50,20 @@ mkdir -p ~/.claude/skills
 # Copy files
 cp CLAUDE.md ~/.claude/
 cp -r skills/* ~/.claude/skills/
+```
+
+**Windows (cmd.exe):**
+```cmd
+mkdir %USERPROFILE%\.claude\skills\mcp
+copy CLAUDE.md %USERPROFILE%\.claude\
+xcopy skills %USERPROFILE%\.claude\skills\ /E /I
+```
+
+**Windows (PowerShell):**
+```powershell
+New-Item -ItemType Directory -Force -Path "$HOME\.claude\skills\mcp"
+Copy-Item CLAUDE.md "$HOME\.claude\"
+Copy-Item -Recurse skills\* "$HOME\.claude\skills\"
 ```
 
 ### 3. Configure Your MCP Servers
